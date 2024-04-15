@@ -7,7 +7,11 @@
 <body>
     <h1>Quizzes</h1>
 
-    {#TODO list quizzes here#}
+    <ul>
+        {% for quiz_id, quiz_info in quizzes.items() %}
+            <li><a href="404">{{ quiz_info['title'] }}</a></li>
+        {% endfor %}
+    </ul>
 
 </body>
 </html>
