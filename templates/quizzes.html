@@ -9,7 +9,7 @@
 
     <ul>
         {% for quiz_id, quiz_info in quizzes.items() %}
-            <li><a href="404">{{ quiz_info['title'] }}</a></li>
+            <li><a href="{{ url_for('take_quiz', quiz_id=quiz_id) }}">{{ quiz_info['title'] }}</a></li>
         {% endfor %}
     </ul>
 

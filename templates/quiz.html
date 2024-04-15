@@ -2,11 +2,22 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>{# TODO show title of Quizz here #}</title>
+    <title>{{ quiz['title'] }}</title>
 </head>
 <body>
 
-    {# TODO show questions, answer options, and submit button here #}
+    <h1>{{ quiz['title'] }}</h1>
+    <form action="{{ url_for('take_quiz', quiz_id=quiz_id) }}" method="post">
+        {% for question_id, question in enumerate(quiz['questions']) %}
+            <p>{{ question['question_text'] }}</p>
+            <ul>
+                {% for option_index, option in enumerate(question['options']) %}
+                    <li><input type="radio" name="{{ question_id }}" value="{{ option_index }}" id="{{ question['id'] }}"> {{ option }}</li>
+                {% endfor %}
+            </ul>
+        {% endfor %}
+        <button type="submit">Submit Quiz</button>
+    </form>
 
 </body>
 </html>
