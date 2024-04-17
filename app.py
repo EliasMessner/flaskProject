@@ -1,7 +1,7 @@
 from flask import Flask, render_template, redirect, url_for, session, request
 
 app = Flask(__name__)
-app.secret_key = 'your_secret_key'
+app.secret_key = 'your_secret_key'  # we need to define this once here, so we can access the sessions variable everywhere
 
 
 quiz_data = {
