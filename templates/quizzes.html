@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Quizzes</title>
+</head>
+<body>
+    <h1>Quizzes</h1>
+
+    <ul>
+        {% for quiz_id, quiz_info in quizzes.items() %}
+            <li><a href="{{ url_for('take_quiz', quiz_id=quiz_id) }}">{{ quiz_info['title'] }}</a></li>
+        {% endfor %}
+    </ul>
+
+</body>
+</html>
